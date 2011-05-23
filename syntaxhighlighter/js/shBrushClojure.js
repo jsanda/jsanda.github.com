@@ -180,7 +180,11 @@ css: 'preprocessor' },
 css: 'functions' }
 ];
 
-this.forHtmlScript(SyntaxHighlighter.regexLib.scriptScriptTags);
+//this.forHtmlScript(SyntaxHighlighter.regexLib.scriptScriptTags);
+this.forHtmlScript({
+			left	: /(&lt;|<)%[@!=]?/g, 
+			right	: /%(&gt;|>)/g 
+		});
 };
 
 SyntaxHighlighter.brushes.Clojure.prototype = new SyntaxHighlighter.Highlighter();
